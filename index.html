@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himanshu - Graphic Designer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">Himanshu</div>
+        <ul class="navbar-links">
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="header">
+        <div class="logo-container">
+            <h1 class="name">HIMANSHU</h1>
+        </div>
+        <div class="title-container">
+            <div class="role-group">
+                <span class="role">GRAPHIC DESIGNER</span>
+                <span class="role-separator">|</span>
+                <span class="role">VIDEO EDITOR</span>
+                <span class="role-separator">|</span>
+                <span class="role">UI/UX DESIGNER</span>
+            </div>
+        </div>
+        <div class="profile-section">
+            <div class="profile-image-container">
+                <img src="profile-image.png" alt="Himanshu" class="profile-image">
+            </div>
+            <div class="app-icons">
+                <img src="logos/ps-logo.png" alt="Adobe Photoshop logo" class="app-icon">
+                <img src="logos/figma-logo.png" alt="Figma logo" class="app-icon">
+                <img src="logos/canva-logo.png" alt="Canva logo" class="app-icon">
+                <img src="logos/ae-logo.png" alt="Adobe After Effects logo" class="app-icon">
+                <img src="logos/blender-logo.png" alt="Blender logo" class="app-icon">
+            </div>
+            <div class="bio-text">
+                <p>
+                    Hey, my name is <b style="color: #c0392b;">Himanshu</b>, and I'm a creative jack-of-all-trades with a passion for designing and building. My skill set includes Graphic Design (Photoshop), Video Editing (After Effects), and UI/UX Design (Figma). I also have a basic understanding of HTML and CSS, which helps me create designs that are both innovative and technically feasible.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="portfolio-section" id="work">
+            <h2 class="section-title">MY GRAPHIC DESIGN WORK</h2>
+            <div class="grid-container graphic-grid">
+                <div class="grid-item"><img src="graphic-folder/graphic1.png" alt="Graphic design 1"></div>
+                <div class="grid-item"><img src="graphic-folder/graphic2.png" alt="Graphic design 2"></div>
+                <div class="grid-item"><img src="graphic-folder/graphic3.png" alt="Graphic design 3"></div>
+                <div class="grid-item"><img src="graphic-folder/graphic4.png" alt="Graphic design 4"></div>
+                <div class="grid-item"><img src="graphic-folder/graphic5.png" alt="Graphic design 5"></div>
+                <div class="grid-item"><img src="graphic-folder/graphic6.png" alt="Graphic design 6"></div>
+                <div class="grid-item"><img src="graphic-folder/graphic7.png" alt="Graphic design 7"></div>
+                <div class="grid-item"><img src="graphic-folder/graphic9.png" alt="Graphic design 9"></div>
+            </div>
+        </section>
+
+        <section class="portfolio-section">
+            <h2 class="section-title">MY VIDEO EDITING WORK</h2>
+            <div class="grid-container video-grid">
+                <div class="grid-item video-item"><video src="video-folder/video1.mp4" controls muted></video></div>
+                <div class="grid-item video-item"><video src="video-folder/video2.MOV" controls muted></video></div>
+                <div class="grid-item video-item"><video src="video-folder/video3.mp4" controls muted></video></div>
+                <div class="grid-item video-item"><video src="video-folder/video4.mp4" controls muted></video></div>
+                <div class="grid-item video-item"><video src="video-folder/video5.mp4" controls muted></video></div>
+                <div class="grid-item video-item"><video src="video-folder/video6.mp4" controls muted></video></div>
+            </div>
+        </section>
+
+        <section class="about-me-section" id="about">
+            <h2 class="section-title">ABOUT ME</h2>
+            <div class="about-content">
+                <p>
+                    Hello! I'm Himanshu, a passionate graphic designer, video editor, and UI/UX designer with a strong eye for detail. I specialize in creating visually appealing, user-friendly, and impactful content. Let's create something amazing together.
+                </p>
+                <ul>
+                    <li>Expert in graphic design software like Adobe Photoshop, Illustrator, and After Effects.</li>
+                    <li>Highly skilled in video editing, motion graphics, and sound design.</li>
+                    <li>Able to work on tight deadlines and deliver high-quality results.</li>
+                    <li>Strong communication and collaboration skills.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <h2 class="section-title">CONTACT</h2>
+            <div class="contact-content">
+                <p>
+                    Let's create something wonderful together.<br>
+                    Email: <a href="mailto:himanshuhfxu@email.com">himanshuhfxu@email.com</a><br>
+                    Phone: +91 8619173633<br>
+                    Connect with me on social media:    
+                </p>
+                <div class="contact-social-icons">
+                    <a href="https://www.behance.net/" target="_blank" class="social-icon" title="Behance">
+                        <img src="assets/behance.png" alt="Behance" />
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" class="social-icon" title="LinkedIn">
+                        <img src="assets/linkedin.png" alt="LinkedIn" />
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" class="social-icon" title="Instagram">
+                        <img src="assets/instagram.png" alt="Instagram" />
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+document.querySelectorAll('.navbar-links a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+            e.preventDefault();
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+</script>
+</body>
+</html>

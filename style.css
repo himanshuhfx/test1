@@ -1,0 +1,522 @@
+/* Basic Reset and Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #fafafa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Grid overlay for the background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+
+        repeating-linear-gradient(to right, #000000 1px, transparent 1px),
+        repeating-linear-gradient(to bottom, #000000 1px, transparent 1px);
+    background-size: 25px 25px; /* Adjust the size of the grid squares */
+    z-index: -1;
+    opacity: 1;
+}
+
+
+/* Header Section */
+.header {
+    text-align: center;
+    padding: 2rem 0;
+    background: #fafafa;
+    border-bottom: 2px solid #333;
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.h-logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.name {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #c0392b;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.role-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.role {
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #222;
+    letter-spacing: 1px;
+    transition: color 0.3s, text-shadow 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.role:hover {
+    color: #c0392b;
+    text-shadow: 0 2px 12px rgba(192,57,43,0.12);
+}
+
+.role-separator {
+    font-size: 2.2rem;
+    color: #888;
+    font-weight: 700;
+    user-select: none;
+}
+
+.app-logo {
+    height: 40px;
+}
+
+.profile-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: #fafafa;
+}
+
+.profile-image-container {
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1rem auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s cubic-bezier(.22,.61,.36,1), box-shadow 0.35s cubic-bezier(.22,.61,.36,1);
+}
+
+.profile-image:hover {
+    transform: scale(1.07);
+    box-shadow: 0 12px 32px rgba(192, 57, 43, 0.18);
+}
+
+.app-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.app-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.app-icon img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    display: block;
+}
+
+.app-icon:hover {
+    transform: scale(1.12);
+    box-shadow: 0 6px 18px rgba(192,57,43,0.18);
+}
+
+.bio-text {
+    max-width: 600px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.bio-text p {
+    text-align: justify;
+}
+
+/* Portfolio Sections */
+.portfolio-section {
+    padding: 3rem 1rem;
+    background: #fafafa;
+    margin: 20px auto;
+    max-width: 1000px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #c0392b;
+}
+
+.grid-container {
+    display: grid;
+    gap: 20px;
+}
+
+.graphic-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.video-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-item {
+    background-color: #eee;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item img, .grid-item video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.video-item {
+    position: relative;
+    width: 100%;
+    padding-bottom: 177.77%; /* 9:16 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-item video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* About Me & Contact Sections */
+.about-me-section, .contact-section {
+    padding: 3rem 1rem;
+    background: #fafafa;
+    margin: 20px auto;
+    max-width: 1000px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.about-content, .contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.about-content p,
+.contact-content p,
+.contact-content ul,
+.about-content ul {
+    text-align: justify;
+    margin-bottom: 1.2rem;
+}
+
+.about-content ul, .contact-content ul {
+    list-style: disc inside;
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.about-content li, .contact-content li {
+    margin-bottom: 0.8rem;
+    text-align: justify;
+    font-size: 0.98rem; /* 1 size smaller */
+    color: #333;
+    background: none;
+    padding: 0;
+    cursor: default;
+    transition: none;
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-logo {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 00;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    color: #111;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #222;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    transition: color 0.2s;
+}
+
+.navbar-links li a:hover {
+    color: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+    }
+
+    .name {
+        font-size: 2.2rem;
+    }
+
+    .role, .role-separator {
+        font-size: 1.3rem;
+    }
+
+    .profile-image-container {
+        width: 180px;
+        height: 180px;
+    }
+    .profile-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .app-icon {
+        height: 25px;
+    }
+}
+/* Graphic & Video Grid Hover Effects */
+.grid-item img, .grid-item video {
+    transition: transform 0.35s cubic-bezier(.22,.61,.36,1), box-shadow 0.35s;
+}
+
+/* Zoom and pop effect on grid image and video hover */
+.grid-item:hover img,
+.grid-item:hover video {
+    transform: scale(1.07);
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15), 0 2px 8px #c0392b36;
+}
+
+/* Optional: overlay and slight fade for graphic images */
+.grid-item img {
+    position: relative;
+    z-index: 1;
+}
+
+.grid-item:hover img::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(120deg, rgba(192,57,43,0.14) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 2;
+    border-radius: 7px;
+}
+
+/* List link hover gradient underline (contact section) */
+.contact-content ul li a {
+    color: #c0392b;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* gradient underline effect */
+.contact-content ul li a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #c0392b 60%, #313131 100%);
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    transition: width 0.4s cubic-bezier(.42,0,.58,1);
+}
+
+.contact-content ul li a:hover {
+    color: #313131;
+}
+
+.contact-content ul li a:hover::after {
+    width: 100%;
+}
+
+/* Button style/highlight on list item hover */
+.about-content ul li,
+.contact-content ul li {
+    transition: background 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 4px 8px;
+}
+
+.about-content ul li:hover,
+.contact-content ul li:hover {
+    background: rgba(192,57,43,0.09);
+}
+
+
+/* Remove boxed/card styles for sections */
+.portfolio-section,
+.about-me-section,
+.contact-section {
+    padding: 3rem 1rem;        /* Optional: adjust or keep for spacing */
+    background: #fafafa !important;
+    margin: 0;
+    max-width: none;
+    border: none;
+    box-shadow: none;
+}
+.grid-item {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+.app-icon {
+    transition: transform 0.3s cubic-bezier(.22,.61,.36,1), box-shadow 0.3s;
+    box-shadow: none;
+    border-radius: 12px;
+    background: transparent;
+}
+
+.app-icon:hover {
+    transform: translateY(-6px) scale(1.13);
+    box-shadow: 0 6px 22px rgba(44,62,80,0.13), 0 2px 8px #c0392b1a;
+    background: rgba(255,255,255,0.12);
+}
+
+.video-grid .grid-item video {
+    filter: grayscale(1);
+    transition: filter 0.4s cubic-bezier(.22,.61,.36,1);
+    box-shadow: none;
+    transform: none;
+}
+
+.video-grid .grid-item:hover video {
+    filter: none;
+    box-shadow: none;
+    transform: none;
+}
+
+.graphic-grid .grid-item img {
+    filter: grayscale(1);
+    transition: filter 0.4s cubic-bezier(.22,.61,.36,1);
+    box-shadow: none;
+    transform: none;
+}
+
+.graphic-grid .grid-item:hover img {
+    filter: none;
+    box-shadow: none;
+    transform: none;
+}
+
+.profile-section,
+.header,
+.portfolio-section,
+.about-me-section,
+.contact-section {
+    background: #fafafa;
+    padding: 2.5rem 0;
+    box-shadow: none;
+    border: none;
+}
+
+.contact-social-icons {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.25s cubic-bezier(.22,.61,.36,1), box-shadow 0.25s;
+    border-radius: 8px;
+}
+
+.social-icon:hover img {
+    transform: scale(1.18) rotate(-6deg);
+    box-shadow: 0 6px 24px rgba(192,57,43,0.18);
+}
