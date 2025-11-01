@@ -26,7 +26,6 @@ body::before {
         repeating-linear-gradient(to bottom, #000000 1px, transparent 1px);
     background-size: 25px 25px; /* Adjust the size of the grid squares */
     z-index: -1;
-    opacity: 1;
 }
 
 
@@ -209,25 +208,38 @@ body::before {
 }
 
 .graphic-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.thumbnail-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.blog-grid {
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .video-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
 }
 
 .grid-item {
     background-color: #eee;
     overflow: hidden;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.562);
 }
 
 .grid-item img, .grid-item video {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
+    width: 100%; /* Let height adjust automatically */
     display: block;
-    object-fit: cover;
+    object-fit: scale-down;
 }
 
 .video-item {
@@ -370,7 +382,7 @@ body::before {
 .grid-item:hover img,
 .grid-item:hover video {
     transform: scale(1.07);
-    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15), 0 2px 8px #c0392b36;
+   
 }
 
 /* Optional: overlay and slight fade for graphic images */
@@ -438,7 +450,7 @@ body::before {
 .portfolio-section,
 .about-me-section,
 .contact-section {
-    padding: 3rem 1rem;        /* Optional: adjust or keep for spacing */
+    padding: 3rem 4rem;        /* Optional: adjust or keep for spacing */
     background: #fafafa !important;
     margin: 0;
     max-width: none;
@@ -468,12 +480,14 @@ body::before {
     transition: filter 0.4s cubic-bezier(.22,.61,.36,1);
     box-shadow: none;
     transform: none;
+    filter: grayscale(1); /* Stays grayscale by default */
 }
 
 .video-grid .grid-item:hover video {
     filter: none;
     box-shadow: none;
     transform: none;
+    filter: none; /* Becomes color on hover */
 }
 
 .graphic-grid .grid-item img {
@@ -489,13 +503,25 @@ body::before {
     transform: none;
 }
 
-.profile-section,
-.header,
+/* Separate styles for thumbnail and blog grid items */
+.thumbnail-grid .grid-item img,
+.blog-grid .grid-item img {
+    filter: grayscale(1);
+    transition: transform 0.35s cubic-bezier(.22,.61,.36,1), filter 0.35s;
+}
+
+.thumbnail-grid .grid-item:hover img,
+.blog-grid .grid-item:hover img {
+    transform: scale(1);
+    filter: none;
+}
+
+.profile-section, .header,
 .portfolio-section,
 .about-me-section,
 .contact-section {
     background: #fafafa;
-    padding: 2.5rem 0;
+    padding: 2.5rem 4rem;
     box-shadow: none;
     border: none;
 }
